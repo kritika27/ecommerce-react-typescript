@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {  Routes, Route } from "react-router-dom";
+// import {Shoes} from "./pages/Shoes";
+// import { Cart } from "./pages/Cart";
+// import { SingleShoe } from "./pages/SingleShoe";
+import { Navbar} from "./components/Navbar";
+import { Hero } from "./pages/Hero";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export const App:React.FC=()=>{
+
+  return(
+    <>
+      <Navbar/>
+      <Routes>
+<Route path="/" element={<Hero/>} />
+{/* <Route path="/products" element={<Shoes/>}/>
+<Route path="/cart" element={<Cart/>}/>
+<Route path="/products/:id" element={<SingleShoe/>}/> */}
+      </Routes>
+      
+      </>
+  )
 }
-
-export default App;
